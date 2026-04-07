@@ -1,0 +1,41 @@
+---
+title: "CUI Tool — Simplifying Campaign Logic at Scale"
+date: "2024"
+tags: ["Product Design", "Design Strategy", "Systems Thinking", "Internal Tools", "B2B"]
+summary: "Campaign creation at HelloFresh had become a source of errors, confusion, and manual workarounds. My goal wasn't to redesign the interface — it was to redesign the logic underneath it."
+featured: false
+---
+
+The Campaign and Benefit creation tool — the CUI tool — had accumulated complexity over time in the way internal tools often do: feature by feature, edge case by edge case, until the original mental model that made sense of it all had quietly disappeared.
+
+By the time I came to this project, the tool required significant prior knowledge to use correctly. Users were making errors they didn't always catch. There were manual workarounds for things that should have been handled by the system. And new users — or users switching between markets — had no reliable way to build up the right mental model.
+
+The surface-level problem was UX friction. The deeper problem was that the logic of how campaigns and benefits related to each other wasn't reflected in how the tool was structured.
+
+<Placeholder type="image" height={600} caption="CUI tool — existing experience audit" />
+
+## Where I started
+
+My goal was to reduce user error and cognitive load by creating clarity, structure, and reusability in how campaigns and benefits are defined.
+
+That sounds like a UX goal, but it was really a systems goal. You can't reduce cognitive load by moving things around on a screen if the underlying model is confusing. The interface reflects the logic; if the logic is tangled, the interface will be too.
+
+So I started by auditing the existing experience — not to catalogue UI problems, but to understand the mental model it was asking users to have. I mapped the objects (campaigns, benefits, rules, conditions), the relationships between them, and the points in the workflow where users were most likely to make errors.
+
+## What I found and what I did
+
+The process had a shape — Discover, Define, map workflows, understand user needs, define the key phases of campaign creation, establish touch points — but what mattered wasn't the phases, it was what we found in them.
+
+The core issue was that "campaign" and "benefit" had become overloaded concepts. They meant different things in different contexts, and the tool didn't help users understand which context they were in. Creating a proposal for a Benefit Management UX overhaul was one output; the more important output was a shared definition of what these objects were and how they should behave.
+
+I mapped user intent, objects, and campaign phases into a coherent structure. From that structure, we designed a vision for how the tool should work — one where the logic was visible, the relationships were explicit, and reusability was built in rather than hacked around.
+
+<Placeholder type="video" height={500} caption="Vision prototype — simplified campaign creation flow" />
+
+## What this kind of work actually is
+
+This project is a good example of something I find genuinely interesting: the moment when a UX problem reveals itself to be a systems problem, and the design work shifts from "how should this look?" to "how should this work?"
+
+The vision work here was speculative in the sense that it pointed toward a future state rather than shipping a redesign immediately. But that's appropriate for this kind of complexity — you need a clear picture of where you're going before you start making incremental changes, otherwise every incremental change just adds to the confusion.
+
+The tangible results were about confidence and scale: users with a clearer mental model make fewer errors, escalate less, and can do more without support. The strategic win was a design direction that gave the product team something to build toward.

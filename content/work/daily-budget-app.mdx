@@ -1,0 +1,40 @@
+---
+title: "Daily Budget App — The First App I Actually Shipped"
+date: "2025"
+tags: ["Side Project", "Product Design", "Full-Stack", "Personal Tool"]
+summary: "I was tired of maintaining a spreadsheet to track daily spending. So I built an app instead. It's now on my phone as a widget."
+featured: true
+url: "https://kat-daily-budget-app.vercel.app"
+---
+
+I had a Google Sheet for tracking expenses. It worked, technically. But opening a spreadsheet, finding the right tab, logging an amount, and then doing the mental arithmetic to figure out what I had left for the day — I just stopped doing it.
+
+The question I actually wanted answered was simpler: **how much can I spend today?**
+
+Not this month. Not in total. Today — accounting for all my recurring expenses (rent, subscriptions, the things that go out automatically) already deducted from the monthly budget, divided across the days I have left.
+
+One number. That's it.
+
+<Placeholder type="image" height={700} caption="The app — daily budget view" />
+
+## What I built
+
+A Next.js app that does exactly that. You set a monthly budget, log your recurring expenses, and every day the app tells you your daily allowance based on what's left and how many days remain in the month.
+
+You can add expenses as you go. It connects to Gmail to catch recurring charges automatically. There's a transaction history. There's a settings screen.
+
+But mostly it's just that one number, big, on the screen.
+
+<Placeholder type="video" height={500} caption="Adding an expense — the core interaction" />
+
+## Why this one matters to me
+
+This was the first app I built from scratch — not a prototype, not a Figma file handed off to a developer, but a real thing deployed to the internet that I actually use.
+
+It's on my phone now. As a widget on my home screen.
+
+I got curious about what it would actually take to build something, so I tried it. That's usually how it starts for me — a problem I want solved, a tool I want to understand, a question I want to answer properly. I find new technologies genuinely interesting, not intimidating, and the best way I know to understand something is to use it to make something real.
+
+There's also something different about designing something you're going to live with yourself. Every decision has immediate feedback. If the daily number is hard to read at a glance, you notice. If adding an expense takes too many steps, you stop doing it. You become both the designer and the most honest user.
+
+I didn't do this to prove a point. I just wanted to stop maintaining that spreadsheet — and I was curious whether I could. I could. Now the sheet is gone.
