@@ -14,7 +14,7 @@ export default function AppEmbed({ src, label = "Live app", height = 700 }: Prop
           src={src}
           title={label}
           className="w-full h-full border-0"
-          allow="fullscreen"
+          sandbox="allow-scripts allow-same-origin allow-forms"
         />
       </div>
       <figcaption
