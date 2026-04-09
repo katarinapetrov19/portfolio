@@ -9,12 +9,12 @@ type Props = {
 export default function AppEmbed({ src, label = "Live app", height = 700 }: Props) {
   return (
     <figure className="my-12" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
-      <div className="relative w-full bg-neutral-50" style={{ height, overflow: "hidden" }}>
+      <div className="relative w-full bg-neutral-50" style={{ height }}>
         <iframe
           src={src}
           title={label}
           className="w-full border-0"
-          style={{ height: height + 60 }}
+          style={{ height }}
           sandbox="allow-scripts allow-same-origin allow-forms"
         />
       </div>
