@@ -15,7 +15,7 @@ export default function Nav() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-black/5">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="px-[30px] h-14 flex items-start justify-between pt-[20px]">
         <div
           className="relative"
