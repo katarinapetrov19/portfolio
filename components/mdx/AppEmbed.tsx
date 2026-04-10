@@ -18,7 +18,7 @@ export default function AppEmbed({ src, label = "Live app", height = 900 }: Prop
         <div
           style={{
             width: 390,
-            height: height,
+            height: Math.round(height * 0.8),
             borderRadius: "3rem",
             boxShadow: "0 32px 80px rgba(0,0,0,0.25)",
             overflow: "hidden",
@@ -29,7 +29,7 @@ export default function AppEmbed({ src, label = "Live app", height = 900 }: Prop
             src={src}
             title={label}
             width={390}
-            height={height}
+            height={Math.round(height * 0.8)}
             className="border-0 block"
             scrolling="no"
             sandbox="allow-scripts allow-same-origin allow-forms"
