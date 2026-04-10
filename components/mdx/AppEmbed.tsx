@@ -12,7 +12,7 @@ export default function AppEmbed({ src, label = "Live app", height = 900 }: Prop
       {/* Zinc background matching the app's own bg-zinc-300 body */}
       <div
         className="w-full flex items-center justify-center"
-        style={{ height, backgroundColor: "#d4d4d8" }}
+        style={{ height, backgroundColor: "#ffffff" }}
       >
         {/* Card wrapper — shadow lives here, outside the iframe */}
         <div
