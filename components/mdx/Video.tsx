@@ -24,7 +24,12 @@ export default function Video({ src, caption, contained }: Props) {
       />
       {caption && (
         <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
-          {caption}
+          {caption.replace(/https?:\/\/\S+/, '').trim()}{' '}
+          {caption.match(/https?:\/\/\S+/) && (
+            <a href={caption.match(/https?:\/\/\S+/)![0]} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black transition-colors">
+              {caption.match(/https?:\/\/\S+/)![0]}
+            </a>
+          )}
         </figcaption>
       )}
     </figure>
