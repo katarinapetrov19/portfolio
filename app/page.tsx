@@ -23,7 +23,6 @@ export default function Home() {
         <section className="shrink-0 w-[300px] h-full px-[30px] py-16 flex flex-col snap-start border-l border-black/[0.06]">
           {/* Top — aligned to top */}
           <div>
-            <p className="text-xs tracking-widest text-neutral-400 uppercase mb-6">Latest</p>
             <Link href={`/work/${featured.slug}`} className="group inline-block mb-2">
               <h2 className="text-2xl font-medium tracking-tight group-hover:opacity-60 transition-opacity">
                 {featured.title}
