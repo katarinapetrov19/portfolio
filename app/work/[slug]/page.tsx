@@ -9,8 +9,9 @@ import Video from "@/components/mdx/Video";
 import Placeholder from "@/components/mdx/Placeholder";
 import AppEmbed from "@/components/mdx/AppEmbed";
 import FigmaEmbed from "@/components/mdx/FigmaEmbed";
+import StatGrid from "@/components/mdx/StatGrid";
 
-const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed };
+const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid };
 
 export async function generateStaticParams() {
   const projects = getAllProjects();
