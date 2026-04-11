@@ -8,8 +8,9 @@ import ImagePair from "@/components/mdx/ImagePair";
 import Video from "@/components/mdx/Video";
 import Placeholder from "@/components/mdx/Placeholder";
 import AppEmbed from "@/components/mdx/AppEmbed";
+import FigmaEmbed from "@/components/mdx/FigmaEmbed";
 
-const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed };
+const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed };
 
 export async function generateStaticParams() {
   const projects = getAllProjects();
