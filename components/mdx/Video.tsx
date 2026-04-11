@@ -3,18 +3,23 @@
 type Props = {
   src: string;
   caption?: string;
+  contained?: boolean;
 };
 
-export default function Video({ src, caption }: Props) {
+export default function Video({ src, caption, contained }: Props) {
   return (
-    <figure className="my-12" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
+    <figure
+      className="my-12"
+      style={contained ? {} : { width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+    >
       <video
         src={src}
         autoPlay
         muted
         loop
         playsInline
-        className="w-full h-auto block"
+        className="w-full block"
+        style={{ maxHeight: "90vh", objectFit: "contain" }}
       />
       {caption && (
         <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
