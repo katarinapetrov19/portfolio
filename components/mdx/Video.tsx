@@ -18,6 +18,7 @@ export default function Video({ src, caption, contained }: Props) {
         muted
         loop
         playsInline
+        controls
         className="w-full block"
         style={{ maxHeight: "90vh", objectFit: "contain" }}
       />
