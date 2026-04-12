@@ -9,6 +9,8 @@ const links = [
   { href: "/cv", label: "CV" },
 ];
 
+const wipLink = { href: "/wip", label: "WIP" };
+
 const bio = "Staff UX Designer and Design Manager. Curious by default, never intimidated by a hard problem, and genuinely excited about new tools and ways of working. Boredom is my biggest enemy — which means I tend to stay sharp.";
 
 export default function Nav() {
@@ -38,6 +40,14 @@ export default function Nav() {
         </div>
 
         <ul className="flex items-center gap-6">
+          <li>
+            <Link
+              href={wipLink.href}
+              className="text-xs text-neutral-300 hover:text-neutral-500 transition-colors"
+            >
+              {wipLink.label}
+            </Link>
+          </li>
           {links.map((l) => (
             <li key={l.href}>
               <Link

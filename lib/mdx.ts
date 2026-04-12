@@ -12,13 +12,14 @@ export type ProjectMeta = {
   summary: string;
   featured?: boolean;
   url?: string;
+  wip?: boolean;
 };
 
 export type Project = ProjectMeta & {
   content: string;
 };
 
-export function getAllProjects(): ProjectMeta[] {
+function readAllProjects(): ProjectMeta[] {
   const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(".mdx"));
 
   return files
@@ -29,6 +30,14 @@ export function getAllProjects(): ProjectMeta[] {
       return { slug, ...data } as ProjectMeta;
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getAllProjects(): ProjectMeta[] {
+  return readAllProjects().filter((p) => !p.wip);
+}
+
+export function getWipProjects(): ProjectMeta[] {
+  return readAllProjects().filter((p) => p.wip);
 }
 
 export function getProject(slug: string): Project {
