@@ -20,7 +20,7 @@ export default function Home() {
             <Link
               href="/work"
               className="inline-flex items-center gap-3 bg-transparent text-[#ff453c] border-[3px] border-[#ff453c] rounded-full font-medium transition-opacity hover:opacity-70"
-              style={{ fontSize: "40px", padding: "28px", lineHeight: "1", letterSpacing: "0.08em" }}
+              style={{ fontSize: "40px", padding: "28px 42px", lineHeight: "1", letterSpacing: "0.08em" }}
             >
               This way <span style={{ fontSize: "44px", lineHeight: "1" }}>→</span>
             </Link>
