@@ -19,8 +19,8 @@ export default function Home() {
             pizza.
             <Link
               href="/work"
-              className="inline-flex items-center gap-3 bg-[#ff453c] text-white border-[3px] border-white rounded-full font-medium transition-opacity hover:opacity-80"
-              style={{ fontSize: "40px", padding: "28px 64px", lineHeight: "1" }}
+              className="inline-flex items-center gap-3 bg-transparent text-white border-[3px] border-white rounded-full font-medium transition-opacity hover:opacity-70"
+              style={{ fontSize: "40px", padding: "28px 96px", lineHeight: "1" }}
             >
               This way <span style={{ fontSize: "44px", lineHeight: "1" }}>→</span>
             </Link>
