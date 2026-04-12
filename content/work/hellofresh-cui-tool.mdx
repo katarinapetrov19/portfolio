@@ -35,3 +35,63 @@ This project is a good example of something I find genuinely interesting: the mo
 The vision work here was speculative in the sense that it pointed toward a future state rather than shipping a redesign immediately. But that's appropriate for this kind of complexity — you need a clear picture of where you're going before you start making incremental changes, otherwise every incremental change just adds to the confusion.
 
 The tangible results were about confidence and scale: users with a clearer mental model make fewer errors, escalate less, and can do more without support. The strategic win was a design direction that gave the product team something to build toward.
+
+## What it looked like in practice
+
+The vision work gave us a shared direction. These are the screens we designed — high-fidelity, specific enough to make the decisions real.
+
+The first screen a user sees when creating a campaign is now a template selection. Conversion, Loyalty, Referral — three intents that map to how marketing teams actually think about campaigns, not how the database categorises them internally. Instead of dropping users into a blank form and expecting them to already understand what they're configuring, we give them a starting point grounded in purpose. The form is still there; intent comes first.
+
+<FullImage src="/Work/CUI/Create%20Campaign.jpg" alt="Create Campaign — template selection" caption="Create Campaign — entry points based on campaign intent, not system structure." />
+
+## A process you can follow
+
+One of the quieter problems in the original tool was that users didn't know what creating a campaign actually involved. Experienced users had the steps in their heads. New users didn't — and the tool didn't tell them.
+
+The creation flow now makes that process explicit in the sidebar: Create details, Set Schedule, Define rules, Review QA, Generate voucher codes, Validate, Review and launch. Each step is navigable. Users know where they are and what comes next. The QA step is built into the flow — not something that happens separately, in a spreadsheet, after the fact.
+
+<ImagePair
+  src1="/Work/CUI/CC-02.jpg"
+  alt1="Create Campaign — add details and set schedule"
+  src2="/Work/CUI/Campaign%20QA.jpg"
+  alt2="Create Campaign — QA review step"
+  caption="The creation flow makes the process visible. The QA review is a gate in the flow, with the full benefit definition surfaced for checking before launch."
+/>
+
+## Logic you can read
+
+The rule builder was the part of this redesign I found most interesting to work through.
+
+The original tool had rules — they were just invisible to the person creating campaigns. You'd configure a multi-level discount and trust that the system would apply it correctly. If it didn't, you'd find out at voucher generation or, worse, when a customer complained.
+
+We redesigned this so the logic is explicit and readable. A benefit definition is a set of composable conditions and effects. You define when a rule applies — subscription type, customer attachment limits, product family — and then you define what it does: if redemption count equals 1, apply 50%; if it equals 2, apply 40%; and so on. The system shows its own logic rather than hiding it.
+
+<FullImage src="/Work/CUI/Create%20benefit%20definition.jpg" alt="Benefit definition — rule builder with conditions and effects" caption="Benefit definition — conditions and effects as explicit, composable rules. Each tier of a multi-level discount is visible, editable, and readable before anything is applied." contained />
+
+The benefit definition detail page extends this further. You can see the effects applied, the campaigns already using this definition, and performance broken down by market and channel. A benefit definition is reusable — and now you can see exactly where it's being used.
+
+<FullImage src="/Work/CUI/Benefit%20definition%20details%20page.jpg" alt="Benefit definition detail — effects, campaigns using it, and market breakdown" caption="Benefit definition detail — reusability made visible. The same definition can be referenced across multiple campaigns; this page shows which ones and how each is performing." contained />
+
+## The details that catch errors
+
+Two specific problems kept surfacing in the audit. The first was SKU-level discount logic — users couldn't easily see what discount applied to which box size, so validation happened in spreadsheets outside the tool. A dedicated SKU-based benefit definition view solves this: a pricing grid at the level that actually matters for voucher generation, downloadable as CSV.
+
+<FullImage src="/Work/CUI/SKU%20based%20Benefit%20Definition.jpg" alt="SKU based Benefit Definition — pricing grid by box size and SKU" caption="SKU based Benefit Definition — discount logic made visible at the SKU and box size level. The thing that was being validated in spreadsheets is now in the tool." contained />
+
+The second problem was what happened when something went wrong. The original tool had error states; it didn't have resolution. The activity panel separates warnings from errors, timestamps them by market, and links directly to the affected campaign. Not a generic alert — a path to the fix.
+
+<FullImage src="/Work/CUI/CA-01.jpg" alt="Activity — Errors & Warnings panel with resolution actions" caption="Errors & Warnings — categorised, timestamped, linked to the affected campaign. The system tells you what to do next, not just that something went wrong." contained />
+
+## The overview
+
+The campaigns overview and detail page changed too — more in emphasis than in structure. The overview surfaces the metrics that matter during an active campaign: vouchers attached, redemption rate, conversion, whether performance is trending above or below the norm. The detail page brings campaign performance, benefit definitions, customer demographics, and a preview of campaign materials into one place.
+
+<ImagePair
+  src1="/Work/CUI/Campaign%20Overview.png"
+  alt1="Overview: Campaigns — list view with key metrics"
+  src2="/Work/CUI/Campaign%20detail%20page.png"
+  alt2="Campaign detail page with performance, benefit definition, and material preview"
+  caption="Campaign overview and detail — the metrics you need to act on, without the noise."
+/>
+
+The bet was that if users could see clearly — at the list level and the detail level — what was running, what was working, and what needed attention, they'd spend less time cross-referencing tools and more time acting on what they found. Fewer manual workarounds. Fewer errors that propagate quietly until they cost money.
