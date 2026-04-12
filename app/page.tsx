@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getAllProjects } from "@/lib/mdx";
 import Tag from "@/components/Tag";
 import HorizontalScroller from "@/components/HorizontalScroller";
+import ScrollToProjectsButton from "@/components/ScrollToProjectsButton";
 
 export default function Home() {
   const projects = getAllProjects();
@@ -17,13 +18,7 @@ export default function Home() {
           Good design beats bad{" "}
           <span className="inline-flex items-center gap-6 flex-wrap">
             pizza.
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-3 bg-transparent text-[#ff453c] border-[3px] border-[#ff453c] rounded-full font-medium transition-opacity hover:opacity-70"
-              style={{ fontSize: "40px", padding: "28px 42px", lineHeight: "1", letterSpacing: "0.08em" }}
-            >
-              This way <span style={{ fontSize: "44px", lineHeight: "1" }}>→</span>
-            </Link>
+            <ScrollToProjectsButton />
           </span>
         </h1>
       </section>

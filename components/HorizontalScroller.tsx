@@ -42,6 +42,7 @@ export default function HorizontalScroller({ children }: { children: React.React
 
   return (
     <div
+      id="horizontal-scroll-container"
       ref={containerRef}
       style={{
         height: "calc(100vh - 56px)",
