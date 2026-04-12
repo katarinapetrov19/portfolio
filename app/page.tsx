@@ -14,7 +14,17 @@ export default function Home() {
       {/* Hero panel */}
       <section className="shrink-0 w-screen h-full px-[30px] pb-16 flex flex-col snap-start" style={{ paddingTop: "104px" }}>
         <h1 className="font-medium tracking-tight mb-6" style={{ color: "#ff453c", fontSize: "250px", lineHeight: "0.624" }}>
-          Good design beats bad pizza.
+          Good design beats bad{" "}
+          <span className="inline-flex items-center gap-6 flex-wrap">
+            pizza.
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-3 bg-black text-white rounded-full font-medium transition-opacity hover:opacity-70"
+              style={{ fontSize: "28px", padding: "20px 48px", lineHeight: "1" }}
+            >
+              This way <span style={{ fontSize: "32px", lineHeight: "1" }}>→</span>
+            </Link>
+          </span>
         </h1>
       </section>
 
