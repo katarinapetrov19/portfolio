@@ -16,7 +16,7 @@ export default function Home() {
       <section className="shrink-0 w-screen h-full px-[30px] pb-16 flex flex-col snap-start" style={{ paddingTop: "104px" }}>
         <h1 className="font-medium tracking-tight mb-6" style={{ color: "#ff453c", fontSize: "250px", lineHeight: "0.624" }}>
           Good design beats bad{" "}
-          <span className="inline-flex items-center gap-6 flex-wrap">
+          <span className="inline-flex items-end gap-6 flex-wrap">
             pizza.
             <ScrollToProjectsButton />
           </span>
