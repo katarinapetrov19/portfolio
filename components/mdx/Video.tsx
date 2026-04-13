@@ -6,9 +6,10 @@ type Props = {
   contained?: boolean;
   controls?: boolean;
   phone?: boolean;
+  width?: number;
 };
 
-export default function Video({ src, caption, contained, controls = false, phone = false }: Props) {
+export default function Video({ src, caption, contained, controls = false, phone = false, width }: Props) {
   return (
     <figure
       className="my-12 flex flex-col items-center"
@@ -22,7 +23,7 @@ export default function Video({ src, caption, contained, controls = false, phone
         playsInline
         {...(controls ? { controls: true } : {})}
         className="block outline-none border-0"
-        style={{ display: "block" }}
+        style={{ display: "block", maxWidth: "100%", ...(width ? { width } : {}) }}
       />
       {caption && (
         <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
