@@ -42,7 +42,6 @@ export default function Video({ src, caption, contained, controls = false, width
           </p>
         )}
       </div>
-      </div>
     );
   }
 
