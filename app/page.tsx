@@ -15,7 +15,7 @@ export default function Home() {
       {/* Hero panel */}
       <section className="shrink-0 w-screen h-full px-[30px] pb-16 flex flex-col snap-start" style={{ paddingTop: "64px" }}>
         <h1 className="font-medium tracking-tight mb-6" style={{ color: "#ff453c", fontSize: "250px", lineHeight: "0.76" }}>
-          Good design beats bad{" "}
+          Good <span style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic" }}>design</span> beats bad{" "}
           <span className="inline-flex items-end gap-6 flex-wrap">
             <span style={{ fontFamily: "var(--font-newsreader)", fontStyle: "italic" }}>pizza.</span>
             <ScrollToProjectsButton />
