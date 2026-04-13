@@ -5,13 +5,14 @@ type Props = {
   caption?: string;
   contained?: boolean;
   controls?: boolean;
+  phone?: boolean;
 };
 
-export default function Video({ src, caption, contained, controls = false }: Props) {
+export default function Video({ src, caption, contained, controls = false, phone = false }: Props) {
   return (
     <figure
-      className="my-12"
-      style={contained ? {} : { width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+      className="my-12 flex flex-col items-center"
+      style={contained ? {} : { width: "100vw", marginLeft: "calc(-50vw + 50%)", background: "white" }}
     >
       <video
         src={src}
@@ -20,8 +21,11 @@ export default function Video({ src, caption, contained, controls = false }: Pro
         loop
         playsInline
         {...(controls ? { controls: true } : {})}
-        className="w-full block outline-none border-0"
-        style={{ maxHeight: "90vh", objectFit: "contain", display: "block" }}
+        className="block outline-none border-0"
+        style={phone
+          ? { width: 390, maxWidth: "100%", display: "block" }
+          : { width: "100%", maxHeight: "90vh", objectFit: "contain", display: "block" }
+        }
       />
       {caption && (
         <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
