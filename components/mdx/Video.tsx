@@ -7,13 +7,17 @@ type Props = {
   controls?: boolean;
   phone?: boolean;
   width?: number;
+  height?: number;
 };
 
-export default function Video({ src, caption, contained, controls = false, phone = false, width }: Props) {
+export default function Video({ src, caption, contained, controls = false, phone = false, width, height }: Props) {
   return (
     <figure
       className="my-12 flex flex-col items-center"
-      style={contained ? {} : { width: "100vw", marginLeft: "calc(-50vw + 50%)", background: "white" }}
+      style={contained
+        ? { ...(width ? { width } : {}), ...(height ? { height } : {}) }
+        : { width: "100vw", marginLeft: "calc(-50vw + 50%)", background: "white", ...(height ? { height } : {}) }
+      }
     >
       <video
         src={src}
