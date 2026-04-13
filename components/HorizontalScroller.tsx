@@ -40,6 +40,48 @@ export default function HorizontalScroller({ children }: { children: React.React
     return () => container.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Convert horizontal wheel (trackpad swipe) to vertical scroll
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+        container.scrollTop += e.deltaX;
+      }
+    };
+
+    container.addEventListener("wheel", onWheel, { passive: false });
+    return () => container.removeEventListener("wheel", onWheel);
+  }, []);
+
+  // Convert touch swipe to vertical scroll
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let startX = 0;
+    let startScrollTop = 0;
+
+    const onTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startScrollTop = container.scrollTop;
+    };
+
+    const onTouchMove = (e: TouchEvent) => {
+      const deltaX = startX - e.touches[0].clientX;
+      container.scrollTop = startScrollTop + deltaX;
+    };
+
+    container.addEventListener("touchstart", onTouchStart, { passive: true });
+    container.addEventListener("touchmove", onTouchMove, { passive: true });
+    return () => {
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchmove", onTouchMove);
+    };
+  }, []);
+
   return (
     <div
       id="horizontal-scroll-container"
