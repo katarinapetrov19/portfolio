@@ -12,18 +12,42 @@ type Props = {
 export default function Video({ src, caption, contained, controls = false, width, height }: Props) {
   const hasDimensions = width && height;
 
-  const figureStyle = hasDimensions
-    ? { width, height, margin: "3rem auto" }
-    : contained
-    ? {}
-    : { width: "100vw", marginLeft: "calc(-50vw + 50%)" };
-
-  const videoStyle = hasDimensions
-    ? { width, height, display: "block" as const }
-    : { width: "100%", display: "block" as const };
+  if (hasDimensions) {
+    return (
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "3rem 0" }}>
+        <video
+          src={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          {...(controls ? { controls: true } : {})}
+          style={{ width, height, display: "block", border: "none", outline: "none" }}
+        />
+        {caption && (
+          <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
+            {caption.replace(/https?:\/\/\S+/, "").trim()}{" "}
+            {caption.match(/https?:\/\/\S+/) && (
+              <a
+                href={caption.match(/https?:\/\/\S+/)![0]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-black transition-colors"
+              >
+                {caption.match(/https?:\/\/\S+/)![0]}
+              </a>
+            )}
+          </p>
+        )}
+      </div>
+    );
+  }
 
   return (
-    <figure className="flex flex-col" style={figureStyle}>
+    <figure
+      className="my-12"
+      style={contained ? {} : { width: "100vw", marginLeft: "calc(-50vw + 50%)" }}
+    >
       <video
         src={src}
         autoPlay
@@ -31,10 +55,10 @@ export default function Video({ src, caption, contained, controls = false, width
         loop
         playsInline
         {...(controls ? { controls: true } : {})}
-        style={videoStyle}
+        style={{ width: "100%", display: "block", border: "none", outline: "none" }}
       />
       {caption && (
-        <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed">
+        <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
           {caption.replace(/https?:\/\/\S+/, "").trim()}{" "}
           {caption.match(/https?:\/\/\S+/) && (
             <a
