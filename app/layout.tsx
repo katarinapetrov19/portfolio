@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { DM_Sans, Newsreader } from "next/font/google";
 import Nav from "@/components/Nav";
 import "./globals.css";
 
@@ -7,6 +7,13 @@ const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500"],
+});
+
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["italic"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} h-full overflow-hidden antialiased`}>
+    <html lang="en" className={`${dmSans.variable} ${newsreader.variable} h-full overflow-hidden antialiased`}>
       <body className="h-full flex flex-col bg-white text-black overflow-hidden">
         <Nav />
         <main className="flex-1 pt-14 overflow-y-auto" style={{ overscrollBehavior: "none" }}>{children}</main>
