@@ -14,16 +14,18 @@ export default function Video({ src, caption, contained, controls = false, width
 
   if (hasDimensions) {
     return (
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "3rem 0" }}>
-        <video
-          src={src}
-          autoPlay
-          muted
-          loop
-          playsInline
-          {...(controls ? { controls: true } : {})}
-          style={{ width, height, display: "block", border: "none", outline: "none" }}
-        />
+      <div style={{ margin: "3rem auto", textAlign: "center" }}>
+        <div style={{ display: "inline-block", width, height, overflow: "hidden", lineHeight: 0 }}>
+          <video
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            {...(controls ? { controls: true } : {})}
+            style={{ width: "100%", height: "100%", display: "block", border: "none", outline: "none" }}
+          />
+        </div>
         {caption && (
           <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
             {caption.replace(/https?:\/\/\S+/, "").trim()}{" "}
@@ -39,6 +41,7 @@ export default function Video({ src, caption, contained, controls = false, width
             )}
           </p>
         )}
+      </div>
       </div>
     );
   }
