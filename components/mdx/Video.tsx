@@ -4,9 +4,10 @@ type Props = {
   src: string;
   caption?: string;
   contained?: boolean;
+  controls?: boolean;
 };
 
-export default function Video({ src, caption, contained }: Props) {
+export default function Video({ src, caption, contained, controls = false }: Props) {
   return (
     <figure
       className="my-12"
@@ -18,9 +19,9 @@ export default function Video({ src, caption, contained }: Props) {
         muted
         loop
         playsInline
-        controls
-        className="w-full block"
-        style={{ maxHeight: "90vh", objectFit: "contain" }}
+        {...(controls ? { controls: true } : {})}
+        className="w-full block outline-none border-0"
+        style={{ maxHeight: "90vh", objectFit: "contain", display: "block" }}
       />
       {caption && (
         <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
