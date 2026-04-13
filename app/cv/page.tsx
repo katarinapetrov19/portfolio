@@ -7,7 +7,7 @@ const experience = [
       "Led UX strategy on the Product Catalogue redesign using OOUX, and the CUI campaign creation tool. Focused on systems thinking, reducing cognitive load, and designing for scale across multiple markets.",
   },
   {
-    role: "Design Manager",
+    role: "Design Lead",
     company: "Delivery Hero",
     period: "2020 — 2022",
     description:
@@ -29,7 +29,7 @@ export default function CVPage() {
             Katarina Petrov
           </h1>
           <p className="text-neutral-500 text-sm">
-            Staff UX Designer & Design Manager — Berlin
+            Staff UX Designer & Design Lead — Berlin
           </p>
         </div>
         <div className="flex flex-col items-end gap-2 text-sm">

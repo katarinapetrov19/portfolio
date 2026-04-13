@@ -17,9 +17,9 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Katarina Petrov — Staff UX Designer & Design Manager",
+  title: "Katarina Petrov — Staff UX Designer & Design Lead",
   description:
-    "Good design beats bad pizza. Portfolio of Katarina Petrov, Staff UX Designer and Design Manager based in Berlin.",
+    "Good design beats bad pizza. Portfolio of Katarina Petrov, Staff UX Designer and Design Lead based in Berlin.",
 };
 
 export default function RootLayout({

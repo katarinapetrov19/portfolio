@@ -5,7 +5,7 @@ export default function AboutPage() {
 
       <div className="prose">
         <p>
-          I'm Katarina — a Staff UX Designer and Design Manager based in Berlin.
+          I'm Katarina — a Staff UX Designer and Design Lead based in Berlin.
           Curiosity is probably the most accurate word for how I work. I find
           new tools, new methods, and new ways of thinking genuinely exciting —
           not as a professional obligation, but because figuring things out is
@@ -21,20 +21,20 @@ export default function AboutPage() {
         </p>
 
         <p>
-          That curiosity shows up everywhere. I've led design at Delivery Hero,
-          building a UX function from nothing and running a full design system
-          migration. I've used OOUX to untangle a product catalogue that had
-          outgrown its original model. I've redesigned campaign logic for a
-          growth tool used across dozens of markets. And I've also just...
-          built an app I wanted for myself, shipped it, and put it on my phone
-          as a widget — because the spreadsheet I was using was boring me.
+          That curiosity shows up in how I learn as much as in what I build. I
+          pick up new methods the way some people pick up hobbies — quickly,
+          obsessively, and usually because something wasn't working well enough
+          with what I already knew. OOUX, AI-powered prototyping, vibe coding,
+          design systems thinking — I didn't learn these because a job required
+          it. I learned them because the problem in front of me made them
+          interesting.
         </p>
 
         <p>
-          I'm always paying attention to what's changing in the field — new
-          AI tools, new ways of collaborating between design and engineering,
-          new ways of thinking about what a designer's job actually is. I don't
-          think the answer is fixed. I think it keeps getting more interesting.
+          The role is changing — what designers do, what tools they use, where
+          they sit in the process. I pay close attention to that, not out of
+          anxiety but out of interest. I want to be someone who shapes what the
+          job becomes, not someone who catches up to it later.
         </p>
 
         <hr />

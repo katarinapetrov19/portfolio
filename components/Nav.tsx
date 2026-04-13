@@ -15,7 +15,7 @@ export default function Nav() {
         <div>
           <Link href="/" className="hover:opacity-60 transition-opacity">
             <span className="block text-[18px] font-medium tracking-tight">Katarina Petrov</span>
-            <span className="block text-[14px] font-normal">Staff UX Designer & Design Manager — Berlin</span>
+            <span className="block text-[14px] font-normal">Staff UX Designer & Design Lead — Berlin</span>
           </Link>
         </div>
 
