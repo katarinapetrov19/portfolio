@@ -5,20 +5,25 @@ type Props = {
   caption?: string;
   contained?: boolean;
   controls?: boolean;
-  phone?: boolean;
   width?: number;
   height?: number;
 };
 
-export default function Video({ src, caption, contained, controls = false, phone = false, width, height }: Props) {
+export default function Video({ src, caption, contained, controls = false, width, height }: Props) {
+  const hasDimensions = width && height;
+
+  const figureStyle = hasDimensions
+    ? { width, height, margin: "3rem auto" }
+    : contained
+    ? {}
+    : { width: "100vw", marginLeft: "calc(-50vw + 50%)" };
+
+  const videoStyle = hasDimensions
+    ? { width, height, display: "block" as const }
+    : { width: "100%", display: "block" as const };
+
   return (
-    <figure
-      className="my-12 flex flex-col items-center"
-      style={contained
-        ? { ...(width ? { width } : {}), ...(height ? { height } : {}) }
-        : { width: "100vw", marginLeft: "calc(-50vw + 50%)", background: "white", ...(height ? { height } : {}) }
-      }
-    >
+    <figure className="flex flex-col" style={figureStyle}>
       <video
         src={src}
         autoPlay
@@ -26,14 +31,18 @@ export default function Video({ src, caption, contained, controls = false, phone
         loop
         playsInline
         {...(controls ? { controls: true } : {})}
-        className="block outline-none border-0"
-        style={{ display: "block", maxWidth: "100%", ...(width ? { width } : {}) }}
+        style={videoStyle}
       />
       {caption && (
-        <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
-          {caption.replace(/https?:\/\/\S+/, '').trim()}{' '}
+        <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed">
+          {caption.replace(/https?:\/\/\S+/, "").trim()}{" "}
           {caption.match(/https?:\/\/\S+/) && (
-            <a href={caption.match(/https?:\/\/\S+/)![0]} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-black transition-colors">
+            <a
+              href={caption.match(/https?:\/\/\S+/)![0]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-black transition-colors"
+            >
               {caption.match(/https?:\/\/\S+/)![0]}
             </a>
           )}
