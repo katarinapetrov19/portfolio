@@ -22,7 +22,7 @@ export default function Video({ src, caption, contained, controls = false, phone
         playsInline
         {...(controls ? { controls: true } : {})}
         className="block outline-none border-0"
-        style={{ width: "100%", display: "block" }}
+        style={{ display: "block" }}
       />
       {caption && (
         <figcaption className="mt-3 text-xs text-neutral-400 leading-relaxed" style={{ width: "70%", margin: "0.75rem auto 0" }}>
