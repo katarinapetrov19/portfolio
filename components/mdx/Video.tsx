@@ -24,7 +24,10 @@ export default function Video({ src, caption, contained, controls = false, width
           muted
           loop
           playsInline
+          width={width}
+          height={height}
           {...(controls ? { controls: true } : {})}
+          style={{ display: "block", width: "100%", height: "auto", border: "none", outline: "none" }}
         />
         {caption && (
           <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
