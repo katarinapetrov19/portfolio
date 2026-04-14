@@ -70,9 +70,23 @@ export default async function ProjectPage({ params }: Props) {
 
           {/* Gap handled by gap-16 */}
 
-          {/* Right — summary, tags, date */}
+          {/* Right — summary, meta row, tags */}
           <div className="w-1/2 flex flex-col justify-start">
             <p className="text-neutral-500 leading-relaxed mb-6">{project.summary}</p>
+            {(project.role || project.type || project.output) && (
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                {[
+                  { label: "Role", value: project.role },
+                  { label: "Type", value: project.type },
+                  { label: "Output", value: project.output },
+                ].map(({ label, value }) => value && (
+                  <div key={label}>
+                    <p className="text-xs tracking-widest text-neutral-400 uppercase mb-1">{label}</p>
+                    <p className="text-sm text-neutral-700 leading-snug">{value}</p>
+                  </div>
+                ))}
+              </div>
+            )}
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tags.map((tag) => (
                 <Tag key={tag} label={tag} />

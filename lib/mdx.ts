@@ -13,6 +13,9 @@ export type ProjectMeta = {
   featured?: boolean;
   url?: string;
   wip?: boolean;
+  role?: string;
+  type?: string;
+  output?: string;
 };
 
 export type Project = ProjectMeta & {
