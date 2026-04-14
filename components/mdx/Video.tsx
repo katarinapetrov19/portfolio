@@ -16,7 +16,7 @@ export default function Video({ src, caption, contained, controls = false, width
     return (
       <div
         className="video-container"
-        style={{ width: `${width}px`, height: `${height}px` }}
+        style={{ "--video-w": `${width}px`, "--video-h": `${height}px` } as React.CSSProperties}
       >
         <video
           src={src}

@@ -115,16 +115,17 @@ body {
 
 .video-container {
   display: block;
-  margin: 3rem auto;
+  width: var(--video-w);
+  height: var(--video-h);
+  max-width: 100%;
   overflow: hidden;
-  flex-shrink: 0;
+  margin: 3rem auto;
 }
 .video-container video {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
+  max-width: none !important;
   border: none !important;
   outline: none !important;
 }
