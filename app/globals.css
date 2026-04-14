@@ -129,3 +129,19 @@ body {
   border: none !important;
   outline: none !important;
 }
+
+.candy-video {
+  width: 550px !important;
+  max-width: 550px !important;
+  margin: 3rem auto !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+.candy-video video {
+  width: 550px !important;
+  max-width: 550px !important;
+  height: auto !important;
+  display: block !important;
+  border: none !important;
+  outline: none !important;
+}
