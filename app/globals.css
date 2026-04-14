@@ -116,12 +116,15 @@ body {
 .video-container {
   display: block;
   margin: 3rem auto;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 .video-container video {
   display: block !important;
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
+  min-width: 0 !important;
   border: none !important;
   outline: none !important;
 }
