@@ -13,8 +13,10 @@ import StatGrid from "@/components/mdx/StatGrid";
 import SectionLabel from "@/components/mdx/SectionLabel";
 import PhaseLabel from "@/components/mdx/PhaseLabel";
 import StageGrid from "@/components/mdx/StageGrid";
+import FindingsGrid from "@/components/mdx/FindingsGrid";
+import FlowSteps from "@/components/mdx/FlowSteps";
 
-const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid };
+const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid, FindingsGrid, FlowSteps };
 
 export async function generateStaticParams() {
   const projects = getAllProjects();
