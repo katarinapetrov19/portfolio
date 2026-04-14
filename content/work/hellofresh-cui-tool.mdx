@@ -1,8 +1,8 @@
 ---
-title: "CUI Tool — Redesigning the Logic, Not the Interface"
+title: "CUI Tool — Simplifying Campaign Logic at Scale"
 date: "2024"
-tags: ["Product Design", "Systems Thinking", "Design Strategy", "Internal Tools", "B2B"]
-summary: "Campaign creation was costing HelloFresh €6M a year in errors. The problem wasn't the UI — it was that the mental model underneath had quietly collapsed."
+tags: ["Product Design", "Design Strategy", "Systems Thinking", "Internal Tools", "B2B"]
+summary: "Campaign creation at HelloFresh had become a source of errors, confusion, and manual workarounds. My goal wasn't to redesign the interface — it was to redesign the logic underneath it."
 featured: false
 wip: true
 role: "Staff UX Designer & Design Lead"
@@ -10,13 +10,11 @@ type: "Vision / direction-setting work"
 output: "Design business case + HiFi vision"
 ---
 
-<SectionLabel text="The problem" />
+The Campaign and Benefit creation tool — the CUI tool — had accumulated complexity over time in the way internal tools often do: feature by feature, edge case by edge case, until the original mental model that made sense of it all had quietly disappeared.
 
-## A tool that required expertise to use safely
+By the time I came to this project, the tool required significant prior knowledge to use correctly. Users were making errors they didn't always catch. There were manual workarounds for things that should have been handled by the system. And new users — or users switching between markets — had no reliable way to build up the right mental model.
 
-The CUI tool — used to create and manage campaigns and benefits across global markets — had grown by accretion. Feature by feature, edge case by edge case, until the original logic that held it together had disappeared. By the time I came to this project, using it correctly required significant institutional knowledge. New users made errors they didn't catch. Veterans had spreadsheets and workarounds that lived outside the system.
-
-> The surface-level problem was UX friction. The deeper problem was that the logic of how campaigns and benefits related to each other wasn't visible in how the tool was structured.
+The surface-level problem was UX friction. The deeper problem was that the logic of how campaigns and benefits related to each other wasn't reflected in how the tool was structured.
 
 <FindingsGrid
   f1l="Root cause" f1t='"Campaign" and "benefit" had become overloaded concepts — meaning different things in different contexts, with no tool support to tell users which context they were in.'
@@ -25,79 +23,43 @@ The CUI tool — used to create and manage campaigns and benefits across global 
   f4l="What made it hard" f4t="The problem wasn't one missing feature — it was a broken conceptual model baked into the tool's structure over years."
 />
 
-<SectionLabel text="Approach" />
+## Where I started
 
-## Build the case first, then the direction
+So I started by building the case for change. Before any redesign conversation could happen, I needed to quantify the problem — so I developed a design business case that mapped stakeholder interviews, key user journeys, and cost impact factors into a clear executive summary.
 
-Before any redesign conversation could start, the problem needed to be quantifiable. I developed a design business case — mapping stakeholder interviews, key user journeys, and cost impact factors into a clear executive summary. That gave the project the strategic weight to move forward.
+The numbers were stark: voucher code errors were costing HelloFresh an estimated €6 million annually across global markets, with additional hidden costs from manual workarounds, missed conversions, and blocked teams. That gave the project the strategic weight it needed to move forward.
 
-The audit that followed wasn't about cataloguing UI issues. It was about understanding what mental model the tool was asking users to carry — then identifying where that model broke down. I mapped the objects (campaigns, benefits, rules, conditions), the relationships between them, and the failure points.
-
-From that, I designed a vision for how the tool *should* work: one where the logic is visible, the relationships are explicit, and reusability is built in rather than hacked around.
+From there, the audit of the existing experience wasn't about cataloguing UI problems — it was about understanding the mental model the tool was asking users to have. I mapped the objects (campaigns, benefits, rules, conditions), the relationships between them, and the points in the workflow where users were most likely to make errors. The business case had shown the cost of those errors. The audit showed why they were happening.
 
 <Video src="/images/cui-workflow-map.mov" contained caption="CUI tool — workflow map" />
 
-<SectionLabel text="Vision work" />
+## What I found and what I did
 
-## Six decisions that would have changed how the tool worked
+The core issue was that "campaign" and "benefit" had become overloaded concepts. They meant different things in different contexts, and the tool didn't help users understand which context they were in. Creating a proposal for a Benefit Management UX overhaul was one output; the more important output was a shared definition of what these objects were and how they should behave.
 
-The high-fidelity screens were specific enough to make design decisions real — and to give the product team something concrete to build toward.
+I mapped user intent, objects, and campaign phases into a coherent structure. From that structure, we designed a vision for how the tool should work — one where the logic was visible, the relationships were explicit, and reusability was built in rather than hacked around.
 
-**Intent-first campaign creation**
+## What this kind of work actually is
 
-Instead of a blank form, users start by choosing a campaign type: Conversion, Loyalty, Referral. Three intents that map to how marketing teams actually think — not how the database categorises them. The form still exists; intent comes first.
+This project is a good example of something I find genuinely interesting: the moment when a UX problem reveals itself to be a systems problem, and the design work shifts from "how should this look?" to "how should this work?"
 
-<FullImage src="/Work/CUI/Create%20Campaign.jpg" alt="Create Campaign — template selection screen" caption="Entry points based on campaign intent, not system structure." contained />
+The vision work here was speculative in the sense that it pointed toward a future state rather than shipping a redesign immediately. But that's appropriate for this kind of complexity — you need a clear picture of where you're going before you start making incremental changes, otherwise every incremental change just adds to the confusion.
 
-**A visible creation process**
+The tangible results were about confidence and scale: users with a clearer mental model make fewer errors, escalate less, and can do more without support. The strategic win was a design direction that gave the product team something to build toward.
 
-The sidebar shows every step: Create details → Set Schedule → Define rules → QA → Generate voucher codes → Validate → Launch. Users always know where they are and what's next. The QA gate is built into the flow, not handled in a spreadsheet afterward.
+## What it looked like in practice
 
-<ImagePair
-  src1="/Work/CUI/CC-02.jpg"
-  alt1="Create Campaign — add details and set schedule"
-  src2="/Work/CUI/Campaign%20QA.jpg"
-  alt2="Create Campaign — QA review step"
-  caption="Create details & set schedule — QA review gate"
-/>
+The vision work gave us a shared direction. These are the screens we designed — high-fidelity, specific enough to make the decisions real.
 
-**Readable rule logic**
+The first screen a user sees when creating a campaign is now a template selection. Conversion, Loyalty, Referral — three intents that map to how marketing teams actually think about campaigns, not how the database categorises them internally. Instead of dropping users into a blank form and expecting them to already understand what they're configuring, we give them a starting point grounded in purpose. The form is still there; intent comes first.
 
-The original tool had rules; they were just invisible. The redesign makes discount logic explicit: conditions, effects, tiers — all composable and readable before anything is applied. If redemption count equals 1, apply 50%. If 2, apply 40%. You can see what the system will do.
+<FullImage src="/Work/CUI/Create%20Campaign.jpg" alt="Create Campaign — template selection" caption="Create Campaign — entry points based on campaign intent, not system structure." contained />
 
-<FullImage src="/Work/CUI/Create%20benefit%20definition.jpg" alt="Benefit definition — rule builder with conditions and effects" caption="Conditions and effects as explicit, composable rules — each discount tier visible and editable before anything is applied." contained />
+## A process you can follow
 
-**Benefit definitions as reusable objects**
+One of the quieter problems in the original tool was that users didn't know what creating a campaign actually involved. Experienced users had the steps in their heads. New users didn't — and the tool didn't tell them.
 
-A benefit definition is no longer a one-off configuration — it's a named object that can be referenced across campaigns. The detail page shows where it's being used, which markets, and how each is performing.
-
-<FullImage src="/Work/CUI/Benefit%20definition%20details%20page.jpg" alt="Benefit definition detail page" caption="Reusability made visible — campaigns using this definition, effects applied, performance by market." contained />
-
-**SKU-level discount visibility**
-
-The audit found users validating SKU-level pricing in external spreadsheets because the tool didn't surface it. A dedicated view shows the pricing grid at the level that matters for voucher generation, exportable as CSV.
-
-<FullImage src="/Work/CUI/SKU%20based%20Benefit%20Definition.jpg" alt="SKU based Benefit Definition — pricing grid" caption="Discount logic visible at SKU and box size level — what was previously validated in spreadsheets." contained />
-
-**Errors with resolution paths**
-
-The old tool had error states; it didn't have resolution. The new activity panel categorises warnings from errors, timestamps them by market, and links directly to the affected campaign. Not just an alert — a path to the fix.
-
-<FullImage src="/Work/CUI/CA-01.jpg" alt="Activity — Errors and Warnings panel" caption="Categorised, timestamped, linked to the affected campaign — the system tells you what to do next." contained />
-
-<ImagePair
-  src1="/Work/CUI/Campaign%20Overview.png"
-  alt1="Campaign overview list"
-  src2="/Work/CUI/Campaign%20detail%20page.png"
-  alt2="Campaign detail page"
-  caption="Campaign overview and detail — the metrics you need to act on, without the noise."
-/>
-
-<SectionLabel text="Proposed flow" />
-
-## The creation process, made explicit
-
-One of the quieter problems was that users didn't know what creating a campaign actually involved. Experienced users had the steps memorised. New users didn't — and the tool didn't tell them.
+The creation flow now makes that process explicit in the sidebar: Create details, Set Schedule, Define rules, Review QA, Generate voucher codes, Validate, Review and launch. Each step is navigable. Users know where they are and what comes next. The QA step is built into the flow — not something that happens separately, in a spreadsheet, after the fact.
 
 <FlowSteps
   s1="Choose template" n1="Conversion, Loyalty, or Referral"
@@ -110,17 +72,50 @@ One of the quieter problems was that users didn't know what creating a campaign 
   s8="Review and launch" n8="Final confirmation"
 />
 
-<SectionLabel text="Framing" />
+<ImagePair
+  src1="/Work/CUI/CC-02.jpg"
+  alt1="Create Campaign — add details and set schedule"
+  src2="/Work/CUI/Campaign%20QA.jpg"
+  alt2="Create Campaign — QA review step"
+  caption="The creation flow makes the process visible. The QA review is a gate in the flow, with the full benefit definition surfaced for checking before launch."
+/>
 
-## What vision work is actually for
+## Logic you can read
 
-This project didn't ship a redesign. The output was a design business case and a high-fidelity vision — a clear picture of where the product should go, before anyone starts making incremental changes. Without that, every incremental change just adds to the confusion.
+The rule builder was the part of this redesign I found most interesting to work through.
 
-<div className="not-prose my-6 p-4 border border-black/10 rounded-xl bg-neutral-50 flex gap-3">
-  <div className="w-2 h-2 rounded-full bg-neutral-300 shrink-0 mt-1.5" />
-  <p className="text-sm text-neutral-600 leading-relaxed"><strong className="text-neutral-800 font-medium">Honest about outcomes:</strong> There's no shipping data because nothing shipped. The value of this work is directional — it gave the product team a shared language for what a campaign and benefit actually are, a costed argument for why the problem matters, and a concrete vision to build toward incrementally.</p>
-</div>
+The original tool had rules — they were just invisible to the person creating campaigns. You'd configure a multi-level discount and trust that the system would apply it correctly. If it didn't, you'd find out at voucher generation or, worse, when a customer complained.
 
-> The moment a UX problem reveals itself to be a systems problem is when the design work shifts from "how should this look?" to "how should this work?" That's where this project lived.
+We redesigned this so the logic is explicit and readable. A benefit definition is a set of composable conditions and effects. You define when a rule applies — subscription type, customer attachment limits, product family — and then you define what it does: if redemption count equals 1, apply 50%; if it equals 2, apply 40%; and so on. The system shows its own logic rather than hiding it.
 
-<StatGrid v1="€6M" l1="Estimated annual cost of voucher errors, used to build the business case" v2="3" l2="Campaign intents that replaced a single blank form (Conversion, Loyalty, Referral)" v3="0" l3="Features shipped — this was vision and direction work, honestly framed as such" />
+<FullImage src="/Work/CUI/Create%20benefit%20definition.jpg" alt="Benefit definition — rule builder with conditions and effects" caption="Benefit definition — conditions and effects as explicit, composable rules. Each tier of a multi-level discount is visible, editable, and readable before anything is applied." contained />
+
+The benefit definition detail page extends this further. You can see the effects applied, the campaigns already using this definition, and performance broken down by market and channel. A benefit definition is reusable — and now you can see exactly where it's being used.
+
+<FullImage src="/Work/CUI/Benefit%20definition%20details%20page.jpg" alt="Benefit definition detail — effects, campaigns using it, and market breakdown" caption="Benefit definition detail — reusability made visible. The same definition can be referenced across multiple campaigns; this page shows which ones and how each is performing." contained />
+
+## The details that catch errors
+
+Two specific problems kept surfacing in the audit. The first was SKU-level discount logic — users couldn't easily see what discount applied to which box size, so validation happened in spreadsheets outside the tool. A dedicated SKU-based benefit definition view solves this: a pricing grid at the level that actually matters for voucher generation, downloadable as CSV.
+
+<FullImage src="/Work/CUI/SKU%20based%20Benefit%20Definition.jpg" alt="SKU based Benefit Definition — pricing grid by box size and SKU" caption="SKU based Benefit Definition — discount logic made visible at the SKU and box size level. The thing that was being validated in spreadsheets is now in the tool." contained />
+
+The second problem was what happened when something went wrong. The original tool had error states; it didn't have resolution. The activity panel separates warnings from errors, timestamps them by market, and links directly to the affected campaign. Not a generic alert — a path to the fix.
+
+<FullImage src="/Work/CUI/CA-01.jpg" alt="Activity — Errors & Warnings panel with resolution actions" caption="Errors & Warnings — categorised, timestamped, linked to the affected campaign. The system tells you what to do next, not just that something went wrong." contained />
+
+## The overview
+
+The campaigns overview and detail page changed too — more in emphasis than in structure. The overview surfaces the metrics that matter during an active campaign: vouchers attached, redemption rate, conversion, whether performance is trending above or below the norm. The detail page brings campaign performance, benefit definitions, customer demographics, and a preview of campaign materials into one place.
+
+<ImagePair
+  src1="/Work/CUI/Campaign%20Overview.png"
+  alt1="Overview: Campaigns — list view with key metrics"
+  src2="/Work/CUI/Campaign%20detail%20page.png"
+  alt2="Campaign detail page with performance, benefit definition, and material preview"
+  caption="Campaign overview and detail — the metrics you need to act on, without the noise."
+/>
+
+The bet was that if users could see clearly — at the list level and the detail level — what was running, what was working, and what needed attention, they'd spend less time cross-referencing tools and more time acting on what they found. Fewer manual workarounds. Fewer errors that propagate quietly until they cost money.
+
+<StatGrid v1="€6M" l1="Estimated annual cost of voucher errors across global markets" v2="3" l2="Campaign intents that replaced a blank form — Conversion, Loyalty, Referral" v3="0" l3="Features shipped — this was vision work, honestly framed as such" />
