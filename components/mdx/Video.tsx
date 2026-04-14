@@ -14,8 +14,8 @@ export default function Video({ src, caption, contained, controls = false, width
 
   if (hasDimensions) {
     return (
-      <div style={{ margin: "3rem auto", textAlign: "center" }}>
-        <div style={{ display: "inline-block", width, height, overflow: "hidden", lineHeight: 0 }}>
+      <div className="my-12" style={{ width, margin: "3rem auto" }}>
+        <div style={{ width, height, overflow: "hidden" }}>
           <video
             src={src}
             autoPlay
