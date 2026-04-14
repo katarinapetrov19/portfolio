@@ -1,15 +1,16 @@
 type Props = {
   type?: "image" | "video";
+  width?: number;
   height?: number;
   caption?: string;
 };
 
-export default function Placeholder({ type = "image", height = 600, caption }: Props) {
+export default function Placeholder({ type = "image", width, height = 600, caption }: Props) {
   return (
-    <figure className="my-12">
+    <div className="my-12" style={width ? { width, margin: "3rem auto" } : {}}>
       <div
-        className="w-full bg-neutral-100 flex items-center justify-center text-neutral-300 text-sm tracking-wide"
-        style={{ height: `${height}px` }}
+        className="bg-neutral-100 flex items-center justify-center text-neutral-300 text-sm tracking-wide"
+        style={{ width: width ? width : "100%", height: `${height}px` }}
       >
         {type === "video" ? "[ video ]" : "[ image ]"}
       </div>
@@ -18,6 +19,6 @@ export default function Placeholder({ type = "image", height = 600, caption }: P
           {caption}
         </figcaption>
       )}
-    </figure>
+    </div>
   );
 }
