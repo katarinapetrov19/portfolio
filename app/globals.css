@@ -108,10 +108,7 @@ body {
 }
 
 .prose video {
-  max-width: 100%;
-  height: auto;
   display: block;
   border: none;
   outline: none;
-  background: white;
 }

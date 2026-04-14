@@ -14,18 +14,16 @@ export default function Video({ src, caption, contained, controls = false, width
 
   if (hasDimensions) {
     return (
-      <div className="my-12" style={{ width, margin: "3rem auto" }}>
-        <div style={{ width, height, overflow: "hidden" }}>
-          <video
-            src={src}
-            autoPlay
-            muted
-            loop
-            playsInline
-            {...(controls ? { controls: true } : {})}
-            style={{ width: "100%", height: "100%", display: "block", border: "none", outline: "none" }}
-          />
-        </div>
+      <div style={{ margin: "3rem auto", width: "fit-content" }}>
+        <video
+          src={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          {...(controls ? { controls: true } : {})}
+          style={{ width: `${width}px`, height: `${height}px`, display: "block", border: "none", outline: "none" }}
+        />
         {caption && (
           <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
             {caption.replace(/https?:\/\/\S+/, "").trim()}{" "}
