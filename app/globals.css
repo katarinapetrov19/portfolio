@@ -144,4 +144,6 @@ body {
   display: block !important;
   border: none !important;
   outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
