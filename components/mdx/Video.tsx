@@ -14,17 +14,17 @@ export default function Video({ src, caption, contained, controls = false, width
 
   if (hasDimensions) {
     return (
-      <div style={{ margin: "3rem auto", width: "fit-content" }}>
+      <div
+        className="video-container"
+        style={{ width: `${width}px`, height: `${height}px` }}
+      >
         <video
           src={src}
-          width={width}
-          height={height}
           autoPlay
           muted
           loop
           playsInline
           {...(controls ? { controls: true } : {})}
-          style={{ display: "block", border: "none", outline: "none" }}
         />
         {caption && (
           <p className="mt-3 text-xs text-neutral-400 leading-relaxed">
