@@ -15,8 +15,9 @@ import PhaseLabel from "@/components/mdx/PhaseLabel";
 import StageGrid from "@/components/mdx/StageGrid";
 import FindingsGrid from "@/components/mdx/FindingsGrid";
 import FlowSteps from "@/components/mdx/FlowSteps";
+import ScreenRow from "@/components/mdx/ScreenRow";
 
-const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid, FindingsGrid, FlowSteps };
+const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid, FindingsGrid, FlowSteps, ScreenRow };
 
 export async function generateStaticParams() {
   const projects = getAllProjects();

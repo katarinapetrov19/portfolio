@@ -61,7 +61,7 @@ The tangible results were about confidence and scale: users with a clearer menta
 
 The vision work gave us a shared direction. These are the screens we designed — high-fidelity, specific enough to make the decisions real.
 
-The first screen a user sees when creating a campaign is now a template selection. Conversion, Loyalty, Referral — three intents that map to how marketing teams actually think about campaigns, not how the database categorises them internally. Instead of dropping users into a blank form and expecting them to already understand what they're configuring, we give them a starting point grounded in purpose. The form is still there; intent comes first.
+<ScreenRow title="Intent-first campaign creation" description="Instead of a blank form, users start by choosing a campaign type: Conversion, Loyalty, Referral. Three intents that map to how marketing teams actually think — not how the database categorises them. The form still exists; intent comes first." />
 
 <FullImage src="/Work/CUI/Create%20Campaign.jpg" alt="Create Campaign — template selection" caption="Create Campaign — entry points based on campaign intent, not system structure." contained />
 
@@ -98,9 +98,13 @@ The original tool had rules — they were just invisible to the person creating 
 
 We redesigned this so the logic is explicit and readable. A benefit definition is a set of composable conditions and effects. You define when a rule applies — subscription type, customer attachment limits, product family — and then you define what it does: if redemption count equals 1, apply 50%; if it equals 2, apply 40%; and so on. The system shows its own logic rather than hiding it.
 
+<ScreenRow title="Readable rule logic" description="Discount logic as composable conditions and effects — each tier visible, editable, and readable before anything is applied. The system shows its own logic rather than hiding it." />
+
 <FullImage src="/Work/CUI/Create%20benefit%20definition.jpg" alt="Benefit definition — rule builder with conditions and effects" caption="Benefit definition — conditions and effects as explicit, composable rules. Each tier of a multi-level discount is visible, editable, and readable before anything is applied." contained />
 
 The benefit definition detail page extends this further. You can see the effects applied, the campaigns already using this definition, and performance broken down by market and channel. A benefit definition is reusable — and now you can see exactly where it's being used.
+
+<ScreenRow title="Benefit definitions as reusable objects" description="A benefit definition is a named object that can be referenced across campaigns. The detail page shows where it's being used, which markets, and how each is performing." />
 
 <FullImage src="/Work/CUI/Benefit%20definition%20details%20page.jpg" alt="Benefit definition detail — effects, campaigns using it, and market breakdown" caption="Benefit definition detail — reusability made visible. The same definition can be referenced across multiple campaigns; this page shows which ones and how each is performing." contained />
 
@@ -108,13 +112,19 @@ The benefit definition detail page extends this further. You can see the effects
 
 Two specific problems kept surfacing in the audit. The first was SKU-level discount logic — users couldn't easily see what discount applied to which box size, so validation happened in spreadsheets outside the tool. A dedicated SKU-based benefit definition view solves this: a pricing grid at the level that actually matters for voucher generation, downloadable as CSV.
 
+<ScreenRow title="SKU-level discount visibility" description="The audit found users validating SKU-level pricing in external spreadsheets. A dedicated view shows the pricing grid at the level that matters for voucher generation, exportable as CSV." />
+
 <FullImage src="/Work/CUI/SKU%20based%20Benefit%20Definition.jpg" alt="SKU based Benefit Definition — pricing grid by box size and SKU" caption="SKU based Benefit Definition — discount logic made visible at the SKU and box size level. The thing that was being validated in spreadsheets is now in the tool." contained />
 
 The second problem was what happened when something went wrong. The original tool had error states; it didn't have resolution. The activity panel separates warnings from errors, timestamps them by market, and links directly to the affected campaign. Not a generic alert — a path to the fix.
 
+<ScreenRow title="Errors with resolution paths" description="Warnings and errors categorised, timestamped by market, linked directly to the affected campaign. Not just an alert — a path to the fix." />
+
 <FullImage src="/Work/CUI/CA-01.jpg" alt="Activity — Errors & Warnings panel with resolution actions" caption="Errors & Warnings — categorised, timestamped, linked to the affected campaign. The system tells you what to do next, not just that something went wrong." contained />
 
 ## The overview
+
+<ScreenRow title="Campaign overview & detail" description="The overview surfaces what matters during an active campaign: vouchers attached, redemption rate, conversion, performance trend. The detail page brings campaign performance, benefit definitions, demographics, and material previews into one place." />
 
 The campaigns overview and detail page changed too — more in emphasis than in structure. The overview surfaces the metrics that matter during an active campaign: vouchers attached, redemption rate, conversion, whether performance is trending above or below the norm. The detail page brings campaign performance, benefit definitions, customer demographics, and a preview of campaign materials into one place.
 
