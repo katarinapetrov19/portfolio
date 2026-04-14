@@ -36,15 +36,15 @@ The first thing I did was build a map. Before touching any tools, I ran a rapid 
 
 Then I used AI to compress every phase that followed.
 
-**Week 1 — Define**
+<PhaseLabel text="Week 1 — Define" />
 
 Generated JTBDs, actions, tools, and a feature set using AI prompting. Built a workflow map covering the full pipeline from consumer favorites to menu activation. Total: 372 prompts across the sprint.
 
-**Week 2 — Design**
+<PhaseLabel text="Week 2 — Design" />
 
 Prompted Magic Patterns with the workflow map and predefined user actions. Iterated directly from Figma screenshots. Ran 5 prototype versions incorporating live feedback. No handoff process — design and prototype happened simultaneously.
 
-**Now — Iterate**
+<PhaseLabel text="Now — Iterate" />
 
 Leadership feedback turned around in hours into a new prototype version using v0. The cycle from feedback to working UI collapsed from weeks to a single session.
 
@@ -52,17 +52,22 @@ Leadership feedback turned around in hours into a new prototype version using v0
 
 The core of the prototype was a four-stage pipeline that replaced the seven disconnected tools.
 
-**Inspire** — Consumer favorites drive recipe discovery via similarity modeling
-
-**Validate** — Automated constraint checks: allergens, SKU, pricing, compliance
-
-**Create** — GenAI content generation for instructions, imagery, tags, and localization
-
-**Activate** — One-click menu addition with approval flow and Recipe Pool integration
+<StageGrid
+  s1="Inspire" d1="Consumer favorites drive recipe discovery via similarity modeling"
+  s2="Validate" d2="Automated constraint checks: allergens, SKU, pricing, compliance"
+  s3="Create" d3="GenAI content generation for instructions, imagery, tags, and localization"
+  s4="Activate" d4="One-click menu addition with approval flow and Recipe Pool integration"
+/>
 
 ## Vibe coding as a design method
 
 This project wasn't built with traditional prototyping tools. It was built by prompting — using AI agents to generate, iterate, and refine UI at a speed that no conventional workflow could match.
+
+<div className="not-prose flex flex-wrap gap-2 my-6">
+  {["Magic Patterns", "v0", "Figma", "Concord (GenAI)", "Internal Tools"].map(t => (
+    <span key={t} className="inline-block px-2.5 py-0.5 text-xs border border-black/20 rounded-full text-neutral-500 italic" style={{fontFamily:"var(--font-newsreader)"}}>{t}</span>
+  ))}
+</div>
 
 The key insight: AI tools don't just accelerate production — they change what's possible in a given timeframe. Prompting from JTBDs and workflow maps directly into a working UI removes the translation layer between thinking and making.
 
@@ -72,11 +77,7 @@ The key insight: AI tools don't just accelerate production — they change what'
 
 ## Something real, in two weeks
 
-**5** — Prototype iterations shipped in two weeks
-
-**7→1** — Legacy tools unified into a single UI
-
-**372** — AI prompts across the full sprint
+<StatGrid v1="5" l1="Prototype iterations shipped in two weeks" v2="7→1" l2="Legacy tools unified into a single UI" v3="372" l3="AI prompts across the full sprint" />
 
 The lo-fi prototype was presented to C-level leadership to support the vision and drive alignment across tech, product, and design. The response was immediate — leadership wanted to see the tools even more integrated, with a higher level of automation end-to-end.
 

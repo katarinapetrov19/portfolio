@@ -11,8 +11,10 @@ import AppEmbed from "@/components/mdx/AppEmbed";
 import FigmaEmbed from "@/components/mdx/FigmaEmbed";
 import StatGrid from "@/components/mdx/StatGrid";
 import SectionLabel from "@/components/mdx/SectionLabel";
+import PhaseLabel from "@/components/mdx/PhaseLabel";
+import StageGrid from "@/components/mdx/StageGrid";
 
-const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel };
+const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid };
 
 export async function generateStaticParams() {
   const projects = getAllProjects();
