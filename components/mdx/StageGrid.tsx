@@ -14,7 +14,7 @@ export default function StageGrid({ s1, d1, s2, d2, s3, d3, s4, d4 }: Props) {
   ];
 
   return (
-    <div className="not-prose grid grid-cols-4 gap-4 my-10">
+    <div className="not-prose max-w-[70%] mx-auto grid grid-cols-4 gap-4 my-10">
       {stages.map(({ label, desc }) => (
         <div
           key={label}

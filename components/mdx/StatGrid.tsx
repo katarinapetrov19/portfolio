@@ -7,7 +7,7 @@ type Props = {
 export default function StatGrid({ v1, l1, v2, l2, v3, l3 }: Props) {
   const stats = [{ value: v1, label: l1 }, { value: v2, label: l2 }, { value: v3, label: l3 }];
   return (
-    <div className="grid grid-cols-3 gap-4 my-8">
+    <div className="not-prose max-w-[70%] mx-auto grid grid-cols-3 gap-4 my-8">
       {stats.map((s, i) => (
         <div key={i} className="border border-black/10 rounded-xl p-5">
           <p className="text-4xl font-bold tracking-tight mb-2" style={{ color: "#ff453c" }}>{s.value}</p>
