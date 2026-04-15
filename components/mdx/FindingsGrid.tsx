@@ -14,7 +14,7 @@ export default function FindingsGrid({ f1l, f1t, f2l, f2t, f3l, f3t, f4l, f4t }:
   ];
 
   return (
-    <div className="not-prose grid grid-cols-2 gap-3 my-6">
+    <div className="not-prose max-w-[70%] mx-auto grid grid-cols-2 gap-3 my-6">
       {findings.map(({ label, text }) => (
         <div key={label} className="border border-black/10 rounded-xl p-4 bg-neutral-50">
           <p className="text-xs font-medium tracking-widest uppercase text-neutral-400 mb-2">{label}</p>
