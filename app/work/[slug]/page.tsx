@@ -53,8 +53,8 @@ export default async function ProjectPage({ params }: Props) {
 
         {/* Two-column title + meta */}
         <div className="flex gap-16">
-          {/* Left — title, 50% */}
-          <div className="w-1/2">
+          {/* Left — title, date, audio player pinned to bottom */}
+          <div className="w-1/2 flex flex-col">
             <h1 className="text-3xl font-medium tracking-tight leading-tight mb-3">
               {project.title}
             </h1>
@@ -71,9 +71,10 @@ export default async function ProjectPage({ params }: Props) {
                 </a>
               )}
             </div>
+            <div className="mt-auto">
+              <ArticleAudioPlayer />
+            </div>
           </div>
-
-          {/* Gap handled by gap-16 */}
 
           {/* Right — summary, meta row, tags */}
           <div className="w-1/2 flex flex-col justify-start">
@@ -97,7 +98,6 @@ export default async function ProjectPage({ params }: Props) {
                 <Tag key={tag} label={tag} />
               ))}
             </div>
-            <ArticleAudioPlayer />
           </div>
         </div>
       </div>
