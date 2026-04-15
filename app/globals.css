@@ -41,6 +41,12 @@ body {
   margin-bottom: 0.75rem;
 }
 
+/* Tighten heading when immediately preceded by a SectionLabel */
+.prose .not-prose + h2,
+.prose .not-prose + h3 {
+  margin-top: 0.25rem;
+}
+
 .prose h1 { font-size: 1.5rem; }
 .prose h2 { font-size: 1.125rem; }
 .prose h3 { font-size: 1rem; }
