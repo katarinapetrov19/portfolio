@@ -9,62 +9,59 @@ type: "Vision / rapid prototyping"
 output: "Clickable hi-fi prototype"
 ---
 
-<SectionLabel text="Prior Research" />
+<SectionLabel text="The strategic context" />
 
-## Mapping Food Systems end-to-end
+## A 10x ambition with a 2-week window
 
-Before Project Eleven, I led a foundational research initiative to map HelloFresh's Food Systems processes from end to end — specifically in the context of migrating the US market to international tooling. This wasn't a small exercise. It meant getting deep into a highly fragmented operational landscape across multiple markets and user types.
+HelloFresh's most prioritised goal was scaling its global recipe offer from 50 recipes per week to 500. A 10x expansion. Not a product tweak — a fundamental change to how fast the entire Food Systems pipeline needed to operate. Seven separate internal tools handled different pieces of this process: recipe creation, content management, compliance checks, menu planning, demand forecasting, procurement. None of them talked to each other. No one had ever tried to unify them.
 
-That work gave Project Eleven its backbone. The complexity of the pipeline — and the case for unifying it — wasn't hypothetical. It was already documented.
-
-<StatGrid v1="53" l1="Stakeholders interviewed across Tech and Ops" v2="6" l2="User groups across US, CA, UK, DACH — Recipe Developers, Editors, PMs, Menu Planners, Demand Planners, Procurement Ops" v3="130" l3="Steps mapped across Food Systems US and International" />
-
-## The challenge — A two-week deadline with no brief
-
-The ask arrived with almost no structure: imagine what it could look like if HelloFresh could take a recipe from creation to the weekly menu in one week — and show us something real, fast. No flows, no existing UI, no spec. Just a business need and a deadline.
-
-The strategic backdrop made it urgent. HelloFresh's most prioritised goal at the time was scaling its global offer from 50 recipes per week to 500 — a 10x expansion that would require the entire Food Systems pipeline to operate at a fundamentally different speed. The vision we were building was one of several initiatives trying to make that possible.
-
-Seven separate internal tools handled pieces of this process. No one had ever tried to stitch them together into a single coherent experience. I had two weeks to invent the problem, define the solution, and prototype it well enough to put in front of leadership.
-
-<FigmaEmbed src="https://embed.figma.com/proto/mOQlm1NZmUqpQTblegeikC/From-Brief-to-Prototype-in-Days?node-id=1-23&viewport=60%2C219%2C0.23&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" height={450} />
+The ask that arrived was deliberately open: imagine what it could look like if HelloFresh could take a recipe from creation to the weekly menu in one week. Show us something real, fast. No flows, no existing UI, no handoff spec. Just the business need and a deadline.
 
 > Decisions that would normally take weeks had to happen in hours. There was no time to wait for clarity — I had to manufacture it.
 
-## Structure first, then speed
+<StatGrid v1="53" l1="Stakeholders interviewed across Tech and Ops before the sprint" v2="6" l2="User groups across US, CA, UK, DACH — developers, planners, editors, PMs" v3="130" l3="Steps mapped across Food Systems US and International pipelines" />
 
-The first thing I did was build a map. Before touching any tools, I ran a rapid discovery phase: whiteboard flow charts, a workflow map, and a feature set — all defined in week one. This was itself iterative — each phase of the pipeline was owned by a different PM, so getting the user goals, JTBDs, and data flows right required 1–2 check-ins with the full group. Only once that foundation was solid could I move fast without thrashing.
+<SectionLabel text="Foundation" />
 
-I used AI tools to compress every phase that followed.
+## The research that made speed possible
+
+Project Eleven didn't start cold. Before the sprint began, I had led a foundational research initiative mapping HelloFresh's Food Systems processes end-to-end — specifically in the context of migrating the US market to international tooling. That work covered 53 stakeholders across Tech and Ops, six distinct user groups, and 130 mapped steps across the full pipeline.
+
+That prior research gave the sprint its backbone. The complexity of the pipeline — and the case for unifying it — wasn't hypothetical when the two weeks started. It was already documented. The fragmentation wasn't a discovery; it was a known fact with a mapped cost. That meant week one could skip the "understand the domain" phase entirely and move straight to defining what a unified system would actually need to do.
+
+This is an underappreciated part of how fast work at this quality becomes possible: the speed wasn't reckless, it was earned by the investment that came before it.
+
+<SectionLabel text="The method" />
+
+## Structure first, then AI — in that order
+
+The most important decision of the sprint was made before any tool was opened: spend week one defining, not designing. The pipeline was owned by different PMs across different parts of the business. Getting user goals, JTBDs, and data flows right required iteration with the full group — and that foundation had to be solid before anything else could move fast without thrashing.
+
+Once the structure was there, AI compressed everything that followed. But it's worth being precise about what that means — because "I used AI" covers a lot of very different things. Here, it meant prompting from artifacts that already existed: JTBDs fed AI to generate feature sets; workflow maps fed AI to scaffold UI; Figma screenshots fed iterative refinement. The AI was downstream of thinking, not a replacement for it. It removed the translation layer between knowing what was needed and having something to react to.
 
 **Week 1 — Define**
 
-Generated JTBDs, actions, tools, and a feature set using AI prompting. Built a workflow map covering the full pipeline from consumer favorites to menu activation. Total: 372 prompts across the sprint.
+Whiteboard flow charts, a full-pipeline workflow map, JTBDs per user group, AI-generated feature set. Check-ins with all PMs to validate the structure before building anything.
 
 **Week 2 — Design**
 
-Prompted Magic Patterns and later v0 with the workflow map and predefined user actions. Iterated directly from Figma screenshots. Ran 5 prototype versions incorporating live feedback. No handoff process — design and prototype happened simultaneously. Total: 372 prompts across the sprint.
+Magic Patterns and v0 prompting from the workflow map and predefined user actions. Figma screenshots as prompt inputs. Five prototype versions incorporating live feedback. No handoff — design and prototype happened simultaneously.
 
-**Now — Iterate**
+**After — Iterate**
 
-Leadership feedback turned around in hours into a new prototype version (0.2). The cycle from feedback to working UI collapsed from weeks to a single session.
+C-level presentation, feedback in hours, hi-fi prototype in a single session. The cycle from leadership input to working artifact collapsed from weeks to hours. 372 prompts total.
 
-## Four stages, one unified system
+<FigmaEmbed src="https://embed.figma.com/proto/mOQlm1NZmUqpQTblegeikC/From-Brief-to-Prototype-in-Days?node-id=1-23&viewport=60%2C219%2C0.23&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&embed-host=share" height={450} />
 
-The core of the prototype was a four-stage pipeline that replaced the seven disconnected tools.
+<SectionLabel text="On the method" />
 
-<StageGrid
-  s1="Inspire" d1="Consumer favorites drive recipe discovery via similarity modeling"
-  s2="Validate" d2="Automated constraint checks: allergens, SKU, pricing, compliance"
-  s3="Create" d3="GenAI content generation for instructions, imagery, tags, and localization"
-  s4="Activate" d4="One-click menu addition with approval flow and Recipe Pool integration"
-/>
+## What vibe coding actually changed
 
-<FullImage src="/images/project-eleven-workflow-map.jpg" alt="Workflow map — four-stage pipeline from Validate to Inspire, Create, and Activate" contained />
+Vibe coding — prompting AI tools directly into working UI — is often framed as a speed story. It is that. But the more interesting change is what becomes *possible*, not just faster. When the gap between a design decision and a testable artifact collapses from days to minutes, the nature of the work shifts. You stop designing in the abstract and start reacting to real things. Iteration becomes the primary mode rather than a final phase.
 
-## Vibe coding as a design method
+On Project Eleven, this meant five prototype versions across two weeks — each one responding to actual feedback, not hypothetical notes. It meant that when leadership responded to the lo-fi presentation with "we want more integration, more automation," that direction became a working hi-fi prototype within hours, not a new sprint. The feedback cycle that normally takes weeks collapsed into a single session.
 
-This project wasn't built with traditional prototyping tools. It was built by prompting — using AI agents to generate, iterate, and refine UI at a speed that no conventional workflow could match.
+The key constraint worth naming: this only worked because the thinking had already happened. JTBDs, workflow maps, user actions — all defined before prompting began. The AI was precise because the inputs were precise. Vague prompting produces vague output. What made this different was treating the AI as an execution layer for decisions already made, not a shortcut around making them.
 
 <div className="not-prose flex flex-wrap gap-2 my-6">
   {["Magic Patterns", "v0", "Figma", "Concord (GenAI)", "Internal Tools"].map(t => (
@@ -72,22 +69,49 @@ This project wasn't built with traditional prototyping tools. It was built by pr
   ))}
 </div>
 
-The key insight: AI tools don't just accelerate production — they change what's possible in a given timeframe. Prompting from JTBDs and workflow maps directly into a working UI removes the translation layer between thinking and making.
-
 <Video src="/images/project-eleven-demo.mp4" contained caption="Screen recording of Lo-fi prototype" />
 
-<SectionLabel text="The Outcome" />
+<SectionLabel text="The vision" />
+
+## Four stages replacing seven tools
+
+The prototype unified seven disconnected internal systems — R2MA, CCM, CPS, MPS, SPT and others — into a single four-stage pipeline. Each stage was designed around a distinct user goal, with automation handling the transitions between them.
+
+<StageGrid
+  s1="Inspire" d1="Consumer favourites drive recipe discovery via similarity modelling. The system surfaces what's likely to perform — before a recipe developer has to guess."
+  s2="Validate" d2="Automated constraint checks across allergens, SKU availability, pricing, and compliance. What currently takes days of cross-team coordination becomes a single gate."
+  s3="Create" d3="GenAI content generation for instructions, imagery, tags, and localisation across markets. One recipe, multiple formats, simultaneously."
+  s4="Activate" d4="One-click menu addition with approval flow and Recipe Pool integration. The end of the pipeline connects directly to the weekly menu — without a handoff."
+/>
+
+> The workflow map that structured these four stages was built in week one and used directly as a prompt input in week two. The same artifact that organised the thinking became the instruction set for the prototype. That's what made the translation layer disappear.
+
+<FullImage src="/images/project-eleven-workflow-map.jpg" alt="Workflow map — four-stage pipeline from Validate to Inspire, Create, and Activate" contained />
+
+<SectionLabel text="Outcome" />
 
 ## Something real, in two weeks
 
+The lo-fi prototype was presented to C-level leadership and drove immediate alignment across tech, product, and design. The response wasn't "interesting, let's plan a follow-up" — it was specific: more integration, more automation end-to-end. That feedback became a hi-fi prototype within hours. Not a new sprint, not a new brief. Hours.
+
+That compression is the real outcome. Not just that a prototype existed in two weeks, but that the feedback loop between leadership input and working artifact had fundamentally changed. The cycle that normally spans weeks — brief, discovery, design, review — collapsed into a single working session. That's a different relationship between design and decision-making.
+
 <StatGrid v1="5" l1="Prototype iterations shipped in two weeks" v2="7→1" l2="Legacy tools unified into a single UI" v3="372" l3="AI prompts across the full sprint" />
-
-The lo-fi prototype was presented to C-level leadership to support the vision and drive alignment across tech, product, and design. The response was immediate — leadership wanted to see the tools even more integrated, with a higher level of automation end-to-end.
-
-Within hours of that feedback, a hi-fi prototype was created: a fully unified interface bringing R2MA, CCM, CPS, MPS, and SPT into a single experience — with automation at its core. The cycle from leadership feedback to working hi-fi prototype collapsed into a single session.
 
 [View first version of improved prototype →](https://v0-recipe-to-menu-automation-2-0-kappa.preview.hellofresh.io/)
 
 [View final version of prototype →](https://v0-recipe-to-menu-automation-2-0-v-blush.preview.hellofresh.io/)
 
 <Video src="/images/project-eleven-hifi.mp4" contained caption="View final hi-fi prototype: https://v0-recipe-to-menu-automation-2-0-v-blush.preview.hellofresh.io/" />
+
+<SectionLabel text="Reflection" />
+
+## What this changes about how design works
+
+The conventional design process has a shape: understand, define, ideate, prototype, test. Each phase has a cost in time, and that cost creates selection pressure — only the most important problems get prototyped, only the best-funded projects get to hi-fi. The rest stay in decks.
+
+What Project Eleven demonstrated is that AI tools don't just speed up individual phases — they change the economics of the whole process. A solo designer, with the right foundation and the right prompting discipline, can produce the kind of artifact that previously required a team, a handoff process, and a multi-week sprint. That changes what gets explored, what gets shown to leadership, and what decisions get made on real evidence rather than slides.
+
+That's the shift worth naming. Not "AI made this faster" — but "AI changed what was possible for one person working alone on a complex problem under real constraints." The method is repeatable. It requires rigour upfront and precision in prompting, but it scales to complexity in a way that conventional prototyping doesn't.
+
+> The prototype wasn't the point. What it proved was a new shape for design work — faster, denser, more connected to the decisions that matter.
