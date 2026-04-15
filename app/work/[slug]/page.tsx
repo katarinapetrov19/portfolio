@@ -17,6 +17,7 @@ import FindingsGrid from "@/components/mdx/FindingsGrid";
 import HypothesesGrid from "@/components/mdx/HypothesesGrid";
 import FlowSteps from "@/components/mdx/FlowSteps";
 import ScreenRow from "@/components/mdx/ScreenRow";
+import ArticleAudioPlayer from "@/components/ArticleAudioPlayer";
 
 const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid, FindingsGrid, HypothesesGrid, FlowSteps, ScreenRow };
 
@@ -104,6 +105,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Article body — text padded via CSS, media breaks out */}
       <article className="prose px-[230px]">
+        <ArticleAudioPlayer />
         <MDXRemote source={project.content} components={components} />
       </article>
     </div>
