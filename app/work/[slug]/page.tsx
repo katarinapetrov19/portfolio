@@ -97,6 +97,7 @@ export default async function ProjectPage({ params }: Props) {
                 <Tag key={tag} label={tag} />
               ))}
             </div>
+            <ArticleAudioPlayer />
           </div>
         </div>
       </div>
@@ -105,7 +106,6 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Article body — text padded via CSS, media breaks out */}
       <article className="prose px-[230px]">
-        <ArticleAudioPlayer />
         <MDXRemote source={project.content} components={components} />
       </article>
     </div>
