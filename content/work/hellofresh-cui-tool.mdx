@@ -78,11 +78,15 @@ The campaigns list was the first thing every user hit every day — but it gave 
   caption="The original tool before the redesign. The list gave no useful information at a glance; the detail page showed data fields, not what users needed to act on."
 />
 
-The redesign centres on giving users the right information at the right level. The overview shows a live activity summary — how many campaigns are running, disabled, scheduled, expired — and surfaces filtering by status, benefit type, and effect so users can find what they need without scrolling. Campaign cards now include channel, partner, goal, and key metrics inline. Bulk editing lets users update multiple campaigns at once. And the benefit definition linked to any campaign is a single click away, not a separate lookup.
+The redesign leads with a live activity summary — running, disabled, scheduled, expired — before the list. Campaign cards now include channel, partner, goal, and key metrics inline. Bulk editing lets users act on multiple campaigns at once. The benefit definition linked to any campaign is a single click away.
+
+One of the more deliberate decisions was how filtering was designed. The query filters on the overview — status, redemption rate, benefit expiration date, market, channel, customer segment — use exactly the same parameters and terminology as the campaign creation flow. A user who just configured a campaign for a specific market with a redemption target can immediately filter the overview by those same values to monitor it. No translation step, no re-learning the vocabulary of a different screen. The system speaks one language throughout.
+
+Filter presets extend this: teams can save the combinations they reach for regularly — active campaigns in Norway, benefits expiring within 30 days, campaigns above a 10% redemption rate — and return to them without rebuilding the query. This directly replaces the per-market tracking spreadsheets teams were maintaining outside the tool.
 
 <FullImage src="/Work/CUI/Campaign Overview.png" alt="Campaign overview — live activity summary, filtering by status and benefit type, bulk actions" contained />
 
-On the detail page, the bet was on consolidation. A campaign summary view at the top gives a snapshot of performance and settings together. Below it, the customer segment, campaign goal, and benefit definition are each explicit sections — not tabs or buried fields. AI-driven recommendations surface when a campaign is underperforming, suggesting target audience adjustments, offer visibility improvements, or benefit definition changes. A preview of campaign materials sits at the bottom, connected to a QA check that flags conflicts before anything goes live.
+On the detail page, the bet was on consolidation. A campaign summary at the top gives a snapshot of performance and settings together. Customer segment, goal, and benefit definition are explicit sections — not tabs or buried fields. AI-driven recommendations surface when a campaign underperforms. A material preview connects to a QA check that flags conflicts before launch.
 
 <FullImage src="/Work/CUI/Campaign detail page.png" alt="Campaign detail page — consolidated summary, performance metrics, benefit definition, customer segment, and material preview" contained />
 
@@ -100,7 +104,9 @@ Benefit definitions were effectively invisible. Users knew a benefit existed som
   caption="The original benefit/discount settings before the redesign. No way to see which campaigns were using a definition, or how it was performing."
 />
 
-The proposed overview adds filtering and sorting by status, expiration date, and usage — so teams can see at a glance which benefits are active, which are expiring soon, and which are sitting unused. Each definition now shows the campaigns it's linked to directly in the list view, replacing a separate lookup step.
+The overview applies the same filtering logic used in the creation flow. When setting up a benefit definition, users specify status, usage limit, expiration type, and customer segment. Those exact fields become the filter parameters on the overview — so the mental model built during creation transfers directly to how users search and monitor afterward. Status, expiration date, usage limit, and market filters all use the same vocabulary, the same values, the same structure. A user who created a benefit with a usage limit of 2 for new customers can filter the overview for exactly that configuration in seconds.
+
+Bulk actions — deactivate, duplicate, approve — operate on the same selection, so teams can act on a cohort of benefits without switching contexts. Each definition shows which campaigns are using it directly in the list, replacing the separate lookup that was causing most of the confusion.
 
 <FullImage src="/Work/CUI/Benefits definition overview.jpg" alt="Benefit definitions overview — filtering by status and expiration, usage visibility, expiry warnings inline" contained />
 
