@@ -13,6 +13,7 @@ export type ProjectMeta = {
   featured?: boolean;
   url?: string;
   wip?: boolean;
+  locked?: boolean;
   role?: string;
   type?: string;
   output?: string;

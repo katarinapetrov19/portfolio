@@ -18,6 +18,7 @@ import HypothesesGrid from "@/components/mdx/HypothesesGrid";
 import FlowSteps from "@/components/mdx/FlowSteps";
 import ScreenRow from "@/components/mdx/ScreenRow";
 import ArticleAudioPlayer from "@/components/ArticleAudioPlayer";
+import PasswordGate from "@/components/PasswordGate";
 
 const components = { FullImage, ImagePair, Video, Placeholder, AppEmbed, FigmaEmbed, StatGrid, SectionLabel, PhaseLabel, StageGrid, FindingsGrid, HypothesesGrid, FlowSteps, ScreenRow };
 
@@ -58,19 +59,17 @@ export default async function ProjectPage({ params }: Props) {
             <h1 className="text-3xl font-medium tracking-tight leading-tight mb-3">
               {project.title}
             </h1>
-            <div className="flex items-center gap-4">
-              <p className="text-xs text-neutral-300">{project.date}</p>
-              {project.url && (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs tracking-wide underline underline-offset-2 text-neutral-400 hover:text-black transition-colors"
-                >
-                  View live →
-                </a>
-              )}
-            </div>
+            <p className="text-xs text-neutral-300 mb-3">{project.date}</p>
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-wide underline underline-offset-2 text-neutral-400 hover:text-black transition-colors"
+              >
+                View live →
+              </a>
+            )}
             <div className="mt-auto">
               <ArticleAudioPlayer />
             </div>
@@ -105,9 +104,17 @@ export default async function ProjectPage({ params }: Props) {
       <hr className="border-black/10 mb-12" />
 
       {/* Article body — text padded via CSS, media breaks out */}
-      <article className="prose px-[230px]">
-        <MDXRemote source={project.content} components={components} />
-      </article>
+      {project.locked ? (
+        <PasswordGate>
+          <article className="prose px-[230px]">
+            <MDXRemote source={project.content} components={components} />
+          </article>
+        </PasswordGate>
+      ) : (
+        <article className="prose px-[230px]">
+          <MDXRemote source={project.content} components={components} />
+        </article>
+      )}
     </div>
   );
 }
