@@ -7,11 +7,25 @@ const experience = [
       "Led UX strategy on the Product Catalogue redesign using OOUX, and the CUI campaign creation tool. Focused on systems thinking, reducing cognitive load, and designing for scale across multiple markets.",
   },
   {
-    role: "Design Lead",
-    company: "Delivery Hero",
+    role: "Product Design Lead",
+    company: "Delivery Hero SE",
     period: "2020 — 2022",
     description:
       "Built the UX function for the Vendor Portal from scratch. Hired and grew a design team, established process, led a full design system migration, and drove alignment across product, engineering, and operations.",
+  },
+  {
+    role: "Senior Product Designer",
+    company: "Delivery Hero SE",
+    period: "2016 — 2020",
+    description:
+      "Senior product design across multiple verticals. Shaped interaction patterns and visual systems at scale.",
+  },
+  {
+    role: "Senior Web & Mobile UI Designer",
+    company: "LUNA TBWA",
+    period: "2012 — 2016",
+    description:
+      "Led UI design for web and mobile products at one of the region's leading agencies. Worked across notable clients including Nissan, Mastercard, BMW, and Krka pharmaceuticals.",
   },
 ];
 
@@ -73,16 +87,13 @@ export default function CVPage() {
         <p className="text-xs tracking-widest text-neutral-400 uppercase mb-4">
           Full CV
         </p>
-        <p className="text-sm text-neutral-500">
-          Available on request —{" "}
-          <a
-            href="mailto:katarinapetrov@gmail.com"
-            className="text-black underline underline-offset-2 hover:opacity-60 transition-opacity"
-          >
-            get in touch
-          </a>
-          .
-        </p>
+        <a
+          href="/KatarinaPetrov_Resume.pdf"
+          download
+          className="inline-block text-sm font-medium text-black border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors"
+        >
+          Download PDF →
+        </a>
       </section>
     </div>
   );
