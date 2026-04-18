@@ -90,7 +90,7 @@ export default function CVPage() {
         <a
           href="/KatarinaPetrov_Resume.pdf"
           download
-          className="inline-block text-sm font-medium text-black border border-black px-4 py-2 hover:bg-black hover:text-white transition-colors"
+          className="text-neutral-500 hover:text-black transition-colors text-sm"
         >
           Download PDF →
         </a>
