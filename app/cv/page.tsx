@@ -36,7 +36,7 @@ const links = [
 
 export default function CVPage() {
   return (
-    <div className="px-[30px] py-20">
+    <div className="px-[30px] py-20 max-w-xl">
       <div className="flex items-start justify-between mb-16">
         <div>
           <h1 className="text-3xl font-medium tracking-tight mb-1">
