@@ -39,7 +39,7 @@ export default function CVPage() {
     <div className="px-[30px] py-20">
       <h1 className="text-3xl font-medium tracking-tight mb-12">CV</h1>
 
-      <div className="max-w-xl">
+      <div className="max-w-[70%] mx-auto">
         <div className="flex items-start justify-between mb-16">
           <div>
             <p className="font-medium tracking-tight">Katarina Petrov</p>
